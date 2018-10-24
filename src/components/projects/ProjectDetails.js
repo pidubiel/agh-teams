@@ -1,13 +1,15 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 const ProjectDetails = (props) => {
   const id = props.match.params.id;
+  //console.log(props);
   return (
     <div className="container section project-details">
       <div className="card grey lighten-5 z-depth-0">
         <div className="card-content">
-          <span className="card-title">Project Title - {id}</span>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic natus esse fuga, voluptatem architecto, corrupti maiores nesciunt consequuntur earum quasi, quos quis. Odit accusantium vero beatae atque ipsam qui nulla!</p>
+          <span className="card-title">{props.projects[id-1].title}</span>
+          <p>{props.projects[id-1].content}</p>
         </div>
         <div className="card-action grey lighten-4 grey-text">
           <div>Posted by the Admin</div>
@@ -18,4 +20,10 @@ const ProjectDetails = (props) => {
   )
 }
 
-export default ProjectDetails
+const mapStateToProps = (state) => {
+  return {
+    projects: state.project.projects
+  }
+}
+
+export default connect(mapStateToProps)(ProjectDetails)
