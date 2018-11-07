@@ -9,7 +9,7 @@ const ProjectSummary = ({project}) => {
       <div className="card-content grey-text text-darken-3">
         <Link to={projectID}><span className="card-title">{project.title}</span></Link>
         <p>Posted by the Admin</p>
-        <p className="grey-text">3rd September, 5am</p>
+        <p className="grey-text font-small">3rd September, 5am</p>
       </div>
     </div>
   )
