@@ -10,7 +10,7 @@ import thunk from 'redux-thunk'
 import { reduxFirestore, getFirestore } from 'redux-firestore'
 import { reactReduxFirebase, getFirebase } from 'react-redux-firebase'
 import fbConfig from './config/fbConfig'
-import { upload_data } from './data/upload_data'
+//import { upload_data } from './data/upload_data'
 
 //Store with store enchancers
 const store = createStore(rootReducer, 
@@ -22,7 +22,9 @@ const store = createStore(rootReducer,
 );
 
 //const firestore = getFirestore();
-upload_data();
+
+//Upload data to Firestore
+//upload_data();
 
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
